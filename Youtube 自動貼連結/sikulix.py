@@ -1,4 +1,5 @@
 import random
+
 python_note_link = 'http://bit.ly/2L0XiHM'
 c1 = unicode("內容很扎實 希望能提供更多教學影片", "utf8")
 c2 = unicode("感謝你的認真教學 我會持續關注", "utf8")
@@ -38,31 +39,32 @@ def past_link(con,link):
     if re.exists("1544865376864.png",3):
         change_url(link)
     else:
-        wait("1540904057809.png",60)
+        wait("1540904057809.png",60) #等待留言圖片
         wait(3)
         click("1540904057809.png")
         paste(con)
         wait(1)
         type(Key.ENTER)
-        type('python'+' requests '+python_note_link)
-        click("1540989566290.png")
+        paste('python'+' requests '+python_note_link)
+        click("1540989566290.png") #留言
         wait(1)
 
 def change_url(link):
-    click("1541206320143.png")
+    click("1541206320143.png") # http//:
     paste(link)
     wait(1)
     type(Key.ENTER)
     wait(1)
 region = Region(1350,681,16,87)
 
-
+# 頁面往下
 def page_down():
     for d in range(15):
         region.click("1541206334777.png")
     
-url =['https://www.youtube.com/watch?v=yfkags92KE4', 'https://www.youtube.com/watch?v=EikkegqiKQk', 'https://www.youtube.com/watch?v=YUnuCtgwI8Q', 'https://www.youtube.com/watch?v=R-HB-mTLi14', 'https://www.youtube.com/watch?v=ZjNbeiHD4Fw', 'https://www.youtube.com/watch?v=nkfys2hQU8s', 'https://www.youtube.com/watch?v=g4wdm488mkE', 'https://www.youtube.com/watch?v=3DRy2aqusl0', 'https://www.youtube.com/watch?v=UtNYzv8gLbs', 'https://www.youtube.com/watch?v=I64c1L_Zl2Y', 'https://www.youtube.com/watch?v=s-BUUApeddk', 
-        ]
+url =[ 
+        
+]
 list = [c1,c2,c3,c4,c5,c6,c7,c8,c9,c10]
 eng = [e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17]
 
@@ -75,8 +77,12 @@ for time in range(len(url)):
         link=url[time+1]
     except:
         pass
-    link=url[time+1]
     past_link(eng[a],link) # 將內容貼上
+
+# sikuli 1.1.3
+# https://sikulix-2014.readthedocs.io/en/latest/basicinfo.html
+# Java
+# https://www.java.com/zh_TW/
 
 
 
